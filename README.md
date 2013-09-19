@@ -16,3 +16,9 @@ Requirements
 - Arduino SPI (http://arduino.cc/en/Reference/SPI)
 - Arduino MIRF (http://playground.arduino.cc/InterfacingWithHardware/Nrf24L01)
 - Adafruit LPD8806 (https://github.com/adafruit/LPD8806))
+
+Monitoring
+----------
+To monitor multiple serial connections on a Mac, you can screen the tty port.
+- ls /dev/tty.*
+- screen /dev/tty.usbmodemfd1141 9600
