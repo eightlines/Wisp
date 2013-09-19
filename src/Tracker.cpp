@@ -33,16 +33,23 @@ void Tracker::update() {
 			case PXCGesture::Gesture::LABEL_HAND_CIRCLE: name = "CIRCLE"; break;
 			case PXCGesture::Gesture::LABEL_HAND_WAVE: name = "WAVE"; break;
 			case PXCGesture::Gesture::LABEL_POSE_BIG5: name = "HIGH5"; break;
-			case PXCGesture::Gesture::LABEL_POSE_THUMB_UP: name = "THUMB UP"; break;
-			case PXCGesture::Gesture::LABEL_POSE_THUMB_DOWN: name = "THUMB DOWN"; break;
-			case PXCGesture::Gesture::LABEL_NAV_SWIPE_DOWN: name = "SWIPE DOWN"; break;
-			case PXCGesture::Gesture::LABEL_NAV_SWIPE_LEFT: name = "SWIPE LEFT"; break;
-			case PXCGesture::Gesture::LABEL_NAV_SWIPE_RIGHT: name = "SWIPE RIGHT"; break;
-			case PXCGesture::Gesture::LABEL_NAV_SWIPE_UP: name = "SWIPE UP"; break;
+			case PXCGesture::Gesture::LABEL_POSE_THUMB_UP: name = "THUMBUP"; break;
+			case PXCGesture::Gesture::LABEL_POSE_THUMB_DOWN: name = "THUMBDOWN"; break;
+			case PXCGesture::Gesture::LABEL_NAV_SWIPE_DOWN: name = "SWIPEDOWN"; break;
+			case PXCGesture::Gesture::LABEL_NAV_SWIPE_LEFT: name = "SWIPELEFT"; break;
+			case PXCGesture::Gesture::LABEL_NAV_SWIPE_RIGHT: name = "SWIPERIGHT"; break;
+			case PXCGesture::Gesture::LABEL_NAV_SWIPE_UP: name = "SWIPEUP"; break;
 		}
 
-		if (name != "") ofSendMessage("GESTURE_" + name);
+		if (name != "") {
+			if (!timeout.isRunning()) {
+				timeout.setParameters(easing, ofxTween::easeIn, 0, 1, 1000, 0); // ONLY SEND ONCE PER SECOND
+				ofSendMessage("GESTURE_" + name);
+			} 
+		}
 	}
+
+	if (timeout.isRunning()) timeout.update();
 
 	ReleaseFrame();
 }

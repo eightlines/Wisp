@@ -11,17 +11,19 @@ void ofApp::setup() {
 	font.loadFont("fonts/CreteRound.ttf", 50);
 
 	tracker = new Tracker();
+	arduino = new Arduino();
 	ring = new Ring(200);
+
+	bShowDepth = true;
 }
 
 void ofApp::update() {
 	tracker->update();
+	arduino->update();
 	ring->update();
 }
 
 void ofApp::draw() {
-	tracker->getDepth().draw(0, 0, 320, 240);
-
 	ofRectangle b = font.getStringBoundingBox("LightWriter", 0, 0);
 	font.drawString("LightWriter", (ofGetWidth() - b.width) / 2, (ofGetHeight() + b.height / 2) / 2);
 
@@ -30,12 +32,18 @@ void ofApp::draw() {
 	ofSetColor(255);
 
 	ring->getResult().draw(0, 0);
+	if (bShowDepth) tracker->getDepth().draw(0, ofGetHeight() - tracker->getDepth().getHeight() / 2, 320 / 2, 240 / 2);
 }
 
 void ofApp::keyReleased(int key) {
 	switch (key) {
 		case 'f': ofToggleFullscreen(); break;
+		case 'h': bShowDepth = !bShowDepth; break;
 	}
+}
+
+void ofApp::windowResized(ofResizeEventArgs &resize) {
+	ring->setSize(resize);
 }
 
 void ofApp::messageReceived(ofMessage &message) {

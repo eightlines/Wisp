@@ -13,6 +13,7 @@ class Ring {
 		Ring(int radius = 150);
 		void update();
 		ofFbo getResult();
+		void setSize(ofResizeEventArgs &resize);
 
 		template <typename T>
 		void createCircle ( vector<T>& points, float radius, int resolution )
