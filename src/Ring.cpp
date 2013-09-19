@@ -23,9 +23,14 @@ Ring::Ring(int radius) {
 	tex = fbo.getTextureReference();
 }
 
+void Ring::setSize(ofResizeEventArgs &resize) {
+	resultFbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
+}
+
 void Ring::update() {
 	ofSetColor(255);
 	resultFbo.begin(); {
+		ofClear(0);
 		glPushMatrix(); {
 			glTranslatef( ofGetWidth() * 0.5, ofGetHeight() * 0.5, 0 );
 			drawCircle();

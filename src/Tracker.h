@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "util_pipeline.h"
+#include "ofxTween.h"
 
 class Tracker : public UtilPipeline {
 	public:
@@ -11,4 +12,6 @@ class Tracker : public UtilPipeline {
 	private:
 		ofTexture tex;
 		unsigned char *labelMap;
+		ofxTween timeout;
+		ofxEasingLinear easing;
 };
