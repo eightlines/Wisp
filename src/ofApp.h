@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
+#include "Utils.h"
+#include "Ring.h"
 #include "Tracker.h"
 
 class ofApp : public ofBaseApp {
@@ -12,4 +14,6 @@ class ofApp : public ofBaseApp {
 		void messageReceived(ofMessage &message);
 	private:
 		Tracker *tracker;
+		Ring *ring;
+		ofTrueTypeFont font;
 };

@@ -105,11 +105,14 @@
     <ClCompile Include="..\..\..\..\..\..\..\Program Files (x86)\Intel\PCSDK\sample\common\src\util_render.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\Ring.cpp" />
     <ClCompile Include="src\Tracker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\Ring.h" />
     <ClInclude Include="src\Tracker.h" />
+    <ClInclude Include="src\Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
