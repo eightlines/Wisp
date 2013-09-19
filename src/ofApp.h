@@ -5,6 +5,7 @@
 #include "Arduino.h"
 #include "Ring.h"
 #include "Tracker.h"
+#include "Instructions.h"
 
 class ofApp : public ofBaseApp {
 	public:
@@ -18,6 +19,9 @@ class ofApp : public ofBaseApp {
 		Tracker *tracker;
 		Arduino *arduino;
 		Ring *ring;
-		ofTrueTypeFont font;
+		Instructions *instructions;
+
 		bool bShowDepth;
+
+		string gesture;
 };

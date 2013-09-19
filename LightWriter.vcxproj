@@ -117,6 +117,7 @@
     <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingSine.cpp" />
     <ClCompile Include="..\..\..\addons\ofxTween\src\ofxTween.cpp" />
     <ClCompile Include="src\Arduino.cpp" />
+    <ClCompile Include="src\Instructions.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\Ring.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingSine.h" />
     <ClInclude Include="..\..\..\addons\ofxTween\src\ofxTween.h" />
     <ClInclude Include="src\Arduino.h" />
+    <ClInclude Include="src\Instructions.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\Ring.h" />
     <ClInclude Include="src\Tracker.h" />

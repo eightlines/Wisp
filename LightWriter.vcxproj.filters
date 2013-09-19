@@ -88,6 +88,9 @@
     <ClCompile Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingSine.cpp">
       <Filter>addons\ofxTween\src\Easings</Filter>
     </ClCompile>
+    <ClCompile Include="src\Instructions.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxTween\src\Easings\ofxEasingSine.h">
       <Filter>addons\ofxTween\src\Easings</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Instructions.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
