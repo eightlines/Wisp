@@ -22,3 +22,4 @@ Monitoring
 To monitor multiple serial connections on a Mac, you can screen the tty port.
 - ls /dev/tty.*
 - screen /dev/tty.usbmodemfd1141 9600
+- To quit, Ctrl-A, Ctrl-\
