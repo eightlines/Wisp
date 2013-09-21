@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "Utils.h"
 
 class Arduino {
 	public:
@@ -9,6 +10,7 @@ class Arduino {
 		void sendInstruction(string message);
 		void setColor(ofColor _color);
 	private:
+		void send(string msg);
 		ofSerial serial;
 		ofColor color;
 };
