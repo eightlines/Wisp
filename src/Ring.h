@@ -14,6 +14,8 @@ class Ring {
 		void update();
 		ofFbo getResult();
 		void setSize(ofResizeEventArgs &resize);
+		void setColor(ofColor _color);
+		void setColorIndicator(ofColor _color);
 
 		template <typename T>
 		void createCircle ( vector<T>& points, float radius, int resolution )
@@ -59,14 +61,16 @@ class Ring {
 		void drawCircle();
 		void drawNormals();
 		void drawRim();
+		void updateTexture();
 
 		vector<ofPoint> circle;
 		vector<ofPoint> normals;
 		vector<ofPoint> innerRim;
 		vector<ofPoint> outerRim;
 		ofTexture tex;
-		ofFbo fbo, resultFbo;
+		ofFbo fbo, resultFbo, textureFbo;
 		ofTrueTypeFont font;
 		bool bDrawNormals;
 		bool bDrawTexture;
+		ofColor color, colorIndicator;
 };

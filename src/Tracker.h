@@ -9,9 +9,11 @@ class Tracker : public UtilPipeline {
 		Tracker();
 		void update();
 		ofTexture getDepth();
+		ofEvent<ofPoint> GEONODE_POSITION_CHANGE;
 	private:
 		ofTexture tex;
 		unsigned char *labelMap;
 		ofxTween timeout;
 		ofxEasingLinear easing;
+		PXCGesture::GeoNode *geonode;
 };

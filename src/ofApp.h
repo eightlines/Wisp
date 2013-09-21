@@ -16,6 +16,9 @@ class ofApp : public ofBaseApp {
 		void windowResized(ofResizeEventArgs &resize);
 		void messageReceived(ofMessage &message);
 	private:
+		void geoNodePositonChange(ofPoint &pos);
+		void colorChange(ofColor &color);
+
 		Tracker *tracker;
 		Arduino *arduino;
 		Ring *ring;

@@ -12,22 +12,25 @@ Ring::Ring(int radius) {
 		innerRim.push_back(circle[i] - normals[i] * 30);
 	}
 
+	textureFbo.allocate(TEXTURE_RESOLUTION * TEXTURE_WIDTH, TEXTURE_HEIGHT, GL_RGBA);
 	resultFbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
-
-	fbo.allocate(TEXTURE_RESOLUTION * TEXTURE_WIDTH, TEXTURE_HEIGHT, GL_RGBA);
-	fbo.begin(); {
-		for (int i = 0; i < TEXTURE_RESOLUTION; i++) {
-			drawGradRect(ofRectangle(i * TEXTURE_WIDTH, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT), ofColor::black, ofFloatColor(ofMap(i, 0, TEXTURE_RESOLUTION - 1, 0, 1), 0.2, 0.4));
-		}
-	} fbo.end();
-	tex = fbo.getTextureReference();
 }
 
 void Ring::setSize(ofResizeEventArgs &resize) {
 	resultFbo.allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);
 }
 
+void Ring::setColor(ofColor _color) {
+	color = _color;
+}
+
+void Ring::setColorIndicator(ofColor _color) {
+	colorIndicator = _color;
+}
+
 void Ring::update() {
+	updateTexture();
+
 	ofSetColor(255);
 	resultFbo.begin(); {
 		ofClear(0);
@@ -41,6 +44,29 @@ void Ring::update() {
 		if (bDrawTexture)
 			fbo.draw(0, 0);
 	} resultFbo.end();
+}
+
+void Ring::updateTexture() {
+	textureFbo.begin(); {
+		for (int i = 0; i < TEXTURE_RESOLUTION; i++) {
+			//drawGradRect(ofRectangle(i * TEXTURE_WIDTH, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT), ofColor::black, ofFloatColor(ofMap(i, 0, TEXTURE_RESOLUTION - 1, 0, 1), 0.2, 0.4));
+			float r = color.r;
+			float g = color.g;
+			float b = color.b;
+
+			ofColor tmpColor;
+			
+			if (r < 10 &&
+				g < 10 &&
+				b < 10) {
+				tmpColor = ofColor::red;
+			} else {
+				tmpColor = color;
+			}
+			drawGradRect(ofRectangle(i * TEXTURE_WIDTH, 0, TEXTURE_WIDTH, TEXTURE_HEIGHT), ofColor::black, tmpColor);
+		}
+	} textureFbo.end();
+	tex = textureFbo.getTextureReference();
 }
 
 ofFbo Ring::getResult() {

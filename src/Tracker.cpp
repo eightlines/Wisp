@@ -1,5 +1,21 @@
 #include "Tracker.h"
 
+const int HANDS = 2;
+const int FINGERS = 5;
+
+const PXCGesture::GeoNode::Label geoHands[] = {
+	PXCGesture::GeoNode::LABEL_BODY_HAND_PRIMARY, 
+	PXCGesture::GeoNode::LABEL_BODY_HAND_SECONDARY
+};
+
+const PXCGesture::GeoNode::Label geoFingers[] = {
+	PXCGesture::GeoNode::LABEL_FINGER_THUMB,
+	PXCGesture::GeoNode::LABEL_FINGER_INDEX,
+	PXCGesture::GeoNode::LABEL_FINGER_MIDDLE,
+	PXCGesture::GeoNode::LABEL_FINGER_RING,
+	PXCGesture::GeoNode::LABEL_FINGER_PINKY,
+};
+
 Tracker::Tracker() {
 	EnableGesture();
 	Init();
@@ -11,6 +27,8 @@ Tracker::Tracker() {
 		tex.allocate(w, h, GL_LUMINANCE);
 		labelMap = new unsigned char[w * h];
 	}
+
+	geonode = new PXCGesture::GeoNode();
 }
 
 void Tracker::update() {
@@ -50,6 +68,14 @@ void Tracker::update() {
 	}
 
 	if (timeout.isRunning()) timeout.update();
+
+	PXCGesture::GeoNode indexData;
+	QueryGesture()->QueryNodeData(0, PXCGesture::GeoNode::LABEL_BODY_HAND_PRIMARY|PXCGesture::GeoNode::LABEL_FINGER_THUMB, &indexData);
+	ofPoint p;
+	p.x = ofMap(indexData.positionImage.x, 0, 320, ofGetWidth(), 0, true);
+	p.y = ofMap(indexData.positionImage.y, 0, 240, 0, ofGetHeight(), true);
+	p.z = indexData.radiusImage;
+	ofNotifyEvent(GEONODE_POSITION_CHANGE, p);
 
 	ReleaseFrame();
 }

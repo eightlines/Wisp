@@ -13,3 +13,10 @@ Arduino::Arduino() {
 
 void Arduino::update() {
 }
+
+void Arduino::sendInstruction(string message) {
+}
+
+void Arduino::setColor(ofColor _color) {
+	color = _color;
+}
