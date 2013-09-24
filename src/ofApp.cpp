@@ -14,6 +14,9 @@ void ofApp::setup() {
 	instructions = new Instructions();
 
 	bShowDepth = true;
+
+	ofAddListener(tracker->GEONODE_POSITION_CHANGE, this, &ofApp::geoNodePositonChange);
+	ofAddListener(instructions->COLOR_CHANGE, this, &ofApp::colorChange);
 }
 
 void ofApp::update() {
@@ -49,6 +52,24 @@ void ofApp::windowResized(ofResizeEventArgs &resize) {
 }
 
 void ofApp::messageReceived(ofMessage &message) {
-	gesture = message.message;
-	if (gesture != "") instructions->setMessage(gesture);
+	vector<string> m = ofSplitString(message.message, "_");
+	if (m[0] == "GESTURE") {
+		gesture = message.message;
+		if (gesture != "") instructions->setMessage(gesture);
+	} else if (m[0] == "CHANGE") {
+		arduino->sendInstruction(message.message);
+	} else if (m[0] == "CHANGE-COLOR") {
+		ring->setColorIndicator(instructions->getColor());
+	} else if (m[0] == "CHANGE-COLOR-SELECTED") {
+		ring->setColor(instructions->getColor());
+		arduino->setColor(instructions->getColor());
+	}
+}
+
+void ofApp::geoNodePositonChange(ofPoint &pos) {
+	instructions->setPosition(pos);
+}
+
+void ofApp::colorChange(ofColor &color) {
+	ring->setColor(color);
 }

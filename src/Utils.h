@@ -103,3 +103,26 @@ static void drawGradRect(ofRectangle rect, ofFloatColor from, ofFloatColor to) {
 
 	glEnd();  
 }
+
+static ofImage drawColorPicker(int w, int h) {
+	float cx = w/2;
+	float cy = h/2;
+	ofImage img;
+
+	img.allocate(w, h, OF_IMAGE_COLOR);
+
+	for (float y = 0; y < h; y++) {
+		for (float x = 0; x < w; x++) {
+			float angle = atan2(y - cy, x - cy) + PI;
+			float dist = ofDist(x, y, cx, cy);
+			float hue = angle / TWO_PI * 255;
+			float sat = ofMap(dist, 0, w / 4, 0, 255, true);
+			float bri = ofMap(dist, w / 4, w / 2, 255, 0, true);
+
+			img.setColor(x, y, ofColor::fromHsb(hue, sat, bri));
+		}
+	}
+
+	img.reloadTexture();
+	return img;
+}

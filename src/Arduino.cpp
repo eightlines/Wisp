@@ -12,4 +12,23 @@ Arduino::Arduino() {
 }
 
 void Arduino::update() {
+	string val = ofxGetSerialString(serial, '\n');
+
+	if (val.size() > 0) {
+		cout << val << endl;
+	}
+}
+
+void Arduino::sendInstruction(string message) {
+	send(message);
+}
+
+void Arduino::setColor(ofColor _color) {
+	color = _color;
+	send("COLOR");
+}
+
+void Arduino::send(string msg) {
+	msg += "\n";
+	serial.writeBytes((unsigned char *)msg.c_str(), msg.length());
 }
