@@ -13,7 +13,7 @@ void BLE_setup() {
 
   ble_begin();
   
-  Serial.println("BLE Initialized");
+  Serial << "BLE Initialized" << endl;
   
   pinMode(DIGITAL_OUT_PIN, OUTPUT);
   pinMode(DIGITAL_IN_PIN, INPUT);
