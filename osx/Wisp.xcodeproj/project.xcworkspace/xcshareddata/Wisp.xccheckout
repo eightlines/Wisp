@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>15DE64DF-1B4C-4476-BA97-622B9F62E8C2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Wisp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>53D956A6-060B-4E30-AEF7-8DE38EEAE996</key>
+		<string>https://github.com/eightlines/LightWriter.git</string>
+		<key>575294D8-2318-4777-98CC-DE56B841D699</key>
+		<string>https://github.com/openframeworks/openFrameworks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>apps/myApps/LightWriter/osx/Wisp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>53D956A6-060B-4E30-AEF7-8DE38EEAE996</key>
+		<string>../../..</string>
+		<key>575294D8-2318-4777-98CC-DE56B841D699</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/eightlines/LightWriter.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>575294D8-2318-4777-98CC-DE56B841D699</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>53D956A6-060B-4E30-AEF7-8DE38EEAE996</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LightWriter</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>575294D8-2318-4777-98CC-DE56B841D699</string>
+			<key>IDESourceControlWCCName</key>
+			<string>openFrameworks</string>
+		</dict>
+	</array>
+</dict>
+</plist>
