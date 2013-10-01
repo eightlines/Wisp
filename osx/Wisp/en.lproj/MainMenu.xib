@@ -86,12 +86,12 @@
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="General" identifier="1" id="H3C-Hn-uo0">
-                                <view key="view" id="6ap-ve-Chv">
-                                    <rect key="frame" x="10" y="33" width="243" height="217"/>
+                                <view key="view" ambiguous="YES" id="6ap-ve-Chv">
+                                    <rect key="frame" x="10" y="33" width="0.0" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nDI-Ie-oac">
-                                            <rect key="frame" x="14" y="142" width="30" height="17"/>
+                                            <rect key="frame" x="14" y="-75" width="30" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="RSSI" id="UnX-0S-xM6">
                                                 <font key="font" metaFont="system"/>
@@ -100,7 +100,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cn8-nR-66X">
-                                            <rect key="frame" x="79" y="142" width="27" height="17"/>
+                                            <rect key="frame" x="79" y="-75" width="27" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="---" id="io6-ft-qkz">
                                                 <font key="font" metaFont="system"/>
@@ -109,7 +109,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="536">
-                                            <rect key="frame" x="34" y="176" width="198" height="32"/>
+                                            <rect key="frame" x="34" y="-41" width="198" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="537">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -120,11 +120,11 @@
                                             </connections>
                                         </button>
                                         <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="583">
-                                            <rect key="frame" x="16" y="185" width="16" height="16"/>
+                                            <rect key="frame" x="16" y="-32" width="16" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </progressIndicator>
                                         <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BvC-d2-a2y">
-                                            <rect key="frame" x="80" y="111" width="86" height="24"/>
+                                            <rect key="frame" x="80" y="-106" width="86" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <segmentedCell key="cell" enabled="NO" alignment="left" style="rounded" trackingMode="selectOne" id="T9j-wP-NIa">
                                                 <font key="font" metaFont="system"/>
@@ -138,7 +138,7 @@
                                             </connections>
                                         </segmentedControl>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-JB-nYV">
-                                            <rect key="frame" x="14" y="113" width="43" height="17"/>
+                                            <rect key="frame" x="14" y="-104" width="43" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Lights" id="Cqc-CT-uhl">
                                                 <font key="font" metaFont="system"/>
@@ -198,7 +198,7 @@
                                 </view>
                             </tabViewItem>
                             <tabViewItem label="Particle" identifier="" id="Ot8-DG-xzv">
-                                <view key="view" ambiguous="YES" id="N56-LN-q25">
+                                <view key="view" id="N56-LN-q25">
                                     <rect key="frame" x="10" y="33" width="243" height="217"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
