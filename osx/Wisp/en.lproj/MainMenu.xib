@@ -81,17 +81,17 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <tabView fixedFrame="YES" initialItem="H3C-Hn-uo0" translatesAutoresizingMaskIntoConstraints="NO" id="Z76-RJ-kNJ">
-                        <rect key="frame" x="4" y="6" width="263" height="263"/>
+                        <rect key="frame" x="4" y="3" width="263" height="263"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="General" identifier="1" id="H3C-Hn-uo0">
                                 <view key="view" id="6ap-ve-Chv">
-                                    <rect key="frame" x="10" y="33" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="10" y="33" width="243" height="217"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nDI-Ie-oac">
-                                            <rect key="frame" x="14" y="-75" width="30" height="17"/>
+                                            <rect key="frame" x="14" y="142" width="30" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="RSSI" id="UnX-0S-xM6">
                                                 <font key="font" metaFont="system"/>
@@ -100,7 +100,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cn8-nR-66X">
-                                            <rect key="frame" x="79" y="-75" width="27" height="17"/>
+                                            <rect key="frame" x="79" y="142" width="27" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="---" id="io6-ft-qkz">
                                                 <font key="font" metaFont="system"/>
@@ -109,7 +109,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="536">
-                                            <rect key="frame" x="34" y="-41" width="198" height="32"/>
+                                            <rect key="frame" x="34" y="176" width="198" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="537">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -120,11 +120,11 @@
                                             </connections>
                                         </button>
                                         <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="583">
-                                            <rect key="frame" x="16" y="-32" width="16" height="16"/>
+                                            <rect key="frame" x="16" y="185" width="16" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         </progressIndicator>
                                         <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BvC-d2-a2y">
-                                            <rect key="frame" x="80" y="-106" width="86" height="24"/>
+                                            <rect key="frame" x="80" y="111" width="86" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <segmentedCell key="cell" enabled="NO" alignment="left" style="rounded" trackingMode="selectOne" id="T9j-wP-NIa">
                                                 <font key="font" metaFont="system"/>
@@ -138,7 +138,7 @@
                                             </connections>
                                         </segmentedControl>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-JB-nYV">
-                                            <rect key="frame" x="14" y="-104" width="43" height="17"/>
+                                            <rect key="frame" x="14" y="113" width="43" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Lights" id="Cqc-CT-uhl">
                                                 <font key="font" metaFont="system"/>
@@ -155,7 +155,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCg-W5-J05">
-                                            <rect key="frame" x="80" y="178" width="108" height="24"/>
+                                            <rect key="frame" x="100" y="178" width="108" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <segmentedCell key="cell" enabled="NO" alignment="left" style="rounded" trackingMode="selectOne" id="HCv-bW-QFx">
                                                 <font key="font" metaFont="system"/>
@@ -187,7 +187,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTF-ez-dQH">
-                                            <rect key="frame" x="80" y="136" width="96" height="21"/>
+                                            <rect key="frame" x="100" y="136" width="128" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" enabled="NO" state="on" alignment="left" minValue="1" maxValue="128" doubleValue="32" tickMarkPosition="above" sliderType="linear" id="bSZ-CF-VRI"/>
                                             <connections>
@@ -203,17 +203,17 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HtC-DL-zpR">
-                                            <rect key="frame" x="80" y="-39" width="108" height="24"/>
+                                            <rect key="frame" x="101" y="-79" width="96" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <segmentedCell key="cell" enabled="NO" alignment="left" style="rounded" trackingMode="selectOne" id="Gcr-JY-awu">
                                                 <font key="font" metaFont="system"/>
                                                 <segments>
-                                                    <segment label="Fade"/>
-                                                    <segment label="Snap" selected="YES" tag="1"/>
+                                                    <segment label="CW" enabled="NO" selected="YES"/>
+                                                    <segment label="CCW" tag="1"/>
                                                 </segments>
                                             </segmentedCell>
                                             <connections>
-                                                <action selector="sendRingState:" target="494" id="t52-8Y-azH"/>
+                                                <action selector="sendDirection:" target="494" id="7Mk-xt-Jm6"/>
                                             </connections>
                                         </segmentedControl>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVL-Uz-XAj">
@@ -235,11 +235,11 @@
                                             </textFieldCell>
                                         </textField>
                                         <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBo-53-wXv">
-                                            <rect key="frame" x="80" y="-81" width="96" height="21"/>
+                                            <rect key="frame" x="101" y="-42" width="136" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <sliderCell key="cell" enabled="NO" state="on" alignment="left" minValue="1" maxValue="128" doubleValue="32" tickMarkPosition="above" sliderType="linear" id="40R-Qd-ThM"/>
+                                            <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="32" tickMarkPosition="above" numberOfTickMarks="32" allowsTickMarkValuesOnly="YES" sliderType="linear" id="40R-Qd-ThM"/>
                                             <connections>
-                                                <action selector="sendRate:" target="494" id="vLF-Nn-z7A"/>
+                                                <action selector="sendPosition:" target="494" id="poT-Tv-mbR"/>
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NwK-6l-4i4">
@@ -252,7 +252,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-fb-w76">
-                                            <rect key="frame" x="80" y="-119" width="96" height="21"/>
+                                            <rect key="frame" x="102" y="-118" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" enabled="NO" state="on" alignment="left" minValue="1" maxValue="128" doubleValue="32" tickMarkPosition="above" sliderType="linear" id="YLU-WH-Ket"/>
                                             <connections>
@@ -269,11 +269,11 @@
                                             </textFieldCell>
                                         </textField>
                                         <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z08-cu-qH8">
-                                            <rect key="frame" x="80" y="-157" width="96" height="21"/>
+                                            <rect key="frame" x="102" y="-156" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <sliderCell key="cell" enabled="NO" state="on" alignment="left" minValue="1" maxValue="128" doubleValue="32" tickMarkPosition="above" sliderType="linear" id="os0-qL-qv5"/>
+                                            <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="5" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="os0-qL-qv5"/>
                                             <connections>
-                                                <action selector="sendRate:" target="494" id="8kt-3Q-yHR"/>
+                                                <action selector="sendLeadCorona:" target="494" id="vP0-E0-aLx"/>
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vid-UB-eEh">
@@ -286,11 +286,11 @@
                                             </textFieldCell>
                                         </textField>
                                         <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgv-Uc-FXl">
-                                            <rect key="frame" x="80" y="-193" width="96" height="21"/>
+                                            <rect key="frame" x="102" y="-192" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <sliderCell key="cell" enabled="NO" state="on" alignment="left" minValue="1" maxValue="128" doubleValue="32" tickMarkPosition="above" sliderType="linear" id="5nv-eF-Vag"/>
+                                            <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="5" tickMarkPosition="above" sliderType="linear" id="5nv-eF-Vag"/>
                                             <connections>
-                                                <action selector="sendRate:" target="494" id="4No-hM-Pxs"/>
+                                                <action selector="sendTailCorona:" target="494" id="QK5-HP-ySV"/>
                                             </connections>
                                         </slider>
                                     </subviews>
@@ -364,6 +364,7 @@
         <customObject id="494" customClass="AppDelegate">
             <connections>
                 <outlet property="btnConnect" destination="536" id="722"/>
+                <outlet property="direction" destination="HtC-DL-zpR" id="QsD-FI-ahe"/>
                 <outlet property="indConnect" destination="583" id="796"/>
                 <outlet property="itemBlink" destination="OxO-W0-tcn" id="vj6-eG-dta"/>
                 <outlet property="itemParticle" destination="Ot8-DG-xzv" id="eh2-PV-jjh"/>
@@ -372,8 +373,11 @@
                 <outlet property="ringType" destination="cCg-W5-J05" id="lDL-hE-gbF"/>
                 <outlet property="sliderBlue" destination="sGo-VU-2H2" id="jWd-rw-HcM"/>
                 <outlet property="sliderGreen" destination="SDE-D4-xgn" id="mcE-c8-YDG"/>
-                <outlet property="sliderRate" destination="NTF-ez-dQH" id="LRg-0N-Amy"/>
+                <outlet property="sliderLeadCorona" destination="Z08-cu-qH8" id="KFe-HK-Nyz"/>
+                <outlet property="sliderPosition" destination="jBo-53-wXv" id="LIq-c4-WU2"/>
+                <outlet property="sliderRate" destination="8fH-fb-w76" id="i74-5E-uF5"/>
                 <outlet property="sliderRed" destination="oSN-2x-veb" id="Qh0-1r-jNh"/>
+                <outlet property="sliderTailCorona" destination="hgv-Uc-FXl" id="psN-0p-gri"/>
                 <outlet property="tabView" destination="Z76-RJ-kNJ" id="x4t-K2-T53"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>

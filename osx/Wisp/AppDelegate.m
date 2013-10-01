@@ -20,26 +20,20 @@
     sliderGreen.enabled = true;
     sliderBlue.enabled = true;
     sliderRate.enabled = true;
+    sliderPosition.enabled = true;
+    sliderLeadCorona.enabled = true;
+    sliderTailCorona.enabled = true;
     lights.enabled = true;
     ringType.enabled = true;
+    direction.enabled = true;
     
     sliderRed.integerValue = 0;
     sliderGreen.integerValue = 0;
     sliderBlue.integerValue = 0;
     sliderRate.integerValue = 32;
-    
-    // UNUSED
-    /*
-    lblAnalogIn.enabled = true;
-    swDigitalOut.enabled = true;
-    lblDigitalIn.enabled = true;
-    btnAnalogIn.enabled = true;
-    
-    swDigitalOut.selectedSegment = 1;
-    lblDigitalIn.stringValue = @"LOW";
-    lblAnalogIn.stringValue = @"----";
-    btnAnalogIn.state = 0;
-    */
+    sliderPosition.integerValue = 0;
+    sliderLeadCorona.integerValue = 0;
+    sliderTailCorona.integerValue = 0;
 }
 
 - (void)bleDidDisconnect {
@@ -52,18 +46,12 @@
     sliderGreen.enabled = false;
     sliderBlue.enabled = false;
     sliderRate.enabled = false;
+    sliderPosition.enabled = false;
+    sliderLeadCorona.enabled = false;
+    sliderTailCorona.enabled = false;
     lights.enabled = false;
     ringType.enabled = false;
-
-    // UNUSED
-    /*
-    lblAnalogIn.enabled = false;
-    swDigitalOut.enabled = false;
-    lblDigitalIn.enabled = false;
-    btnAnalogIn.enabled = false;
-    */
-    
-//    lblAnalogIn.stringValue = @"----";
+    direction.enabled = false;
 }
 
 -(void) bleDidReceiveData:(unsigned char *)data length:(int)length {
@@ -191,18 +179,46 @@
     [ble write:data];
 }
 
-/*
--(IBAction)sendAnalogIn:(id)sender {
-    UInt8 buf[3] = {0xA0, 0x00, 0x00};
+-(IBAction)sendPosition:(id)sender { // PARTICLE START POSITION
+    UInt8 buf[3] = {0x08, 0x00, 0x00};
     
-    if (btnAnalogIn.state == 1)
-        buf[1] = 0x01;
-    else
-        buf[1] = 0x00;
+    buf[1] = sliderPosition.integerValue;
+    buf[2] = (int)sliderPosition.integerValue >> 8;
     
     NSData *data = [[NSData alloc] initWithBytes:buf length:3];
     [ble write:data];
 }
-*/
+
+-(IBAction)sendDirection:(id)sender { // PARTICLE DIRECTION
+    NSInteger selIndex = direction.selectedSegment;
+    
+    UInt8 buf[3] = {0x09, 0x00, 0x00};
+    
+    buf[1] = selIndex;
+    buf[2] = (int)selIndex >> 8;
+    
+    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
+    [ble write:data];
+}
+
+-(IBAction)sendLeadCorona:(id)sender { // PARTICLE LEAD CORONA
+    UInt8 buf[3] = {0x10, 0x00, 0x00};
+    
+    buf[1] = sliderLeadCorona.integerValue;
+    buf[2] = (int)sliderLeadCorona.integerValue >> 8;
+    
+    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
+    [ble write:data];
+}
+
+-(IBAction)sendTailCorona:(id)sender { // PARTICLE LEAD CORONA
+    UInt8 buf[3] = {0x11, 0x00, 0x00};
+    
+    buf[1] = sliderTailCorona.integerValue;
+    buf[2] = (int)sliderTailCorona.integerValue >> 8;
+    
+    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
+    [ble write:data];
+}
 
 @end
