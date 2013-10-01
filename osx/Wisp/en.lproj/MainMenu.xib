@@ -134,7 +134,7 @@
                                                 </segments>
                                             </segmentedCell>
                                             <connections>
-                                                <action selector="sendLightState:" target="494" id="SH9-NF-tON"/>
+                                                <action selector="sendSegmentedControl:" target="494" id="PSR-y9-Wfv"/>
                                             </connections>
                                         </segmentedControl>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-JB-nYV">
@@ -154,7 +154,7 @@
                                     <rect key="frame" x="10" y="33" width="243" height="217"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCg-W5-J05">
+                                        <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="cCg-W5-J05">
                                             <rect key="frame" x="100" y="178" width="108" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <segmentedCell key="cell" enabled="NO" alignment="left" style="rounded" trackingMode="selectOne" id="HCv-bW-QFx">
@@ -165,7 +165,7 @@
                                                 </segments>
                                             </segmentedCell>
                                             <connections>
-                                                <action selector="sendRingState:" target="494" id="ZZb-Gf-472"/>
+                                                <action selector="sendSegmentedControl:" target="494" id="cYf-OR-6oW"/>
                                             </connections>
                                         </segmentedControl>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Poa-vT-cky">
@@ -186,12 +186,12 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NTF-ez-dQH">
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="NTF-ez-dQH">
                                             <rect key="frame" x="100" y="136" width="128" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" enabled="NO" state="on" alignment="left" minValue="1" maxValue="128" doubleValue="32" tickMarkPosition="above" sliderType="linear" id="bSZ-CF-VRI"/>
                                             <connections>
-                                                <action selector="sendRate:" target="494" id="j6Y-z2-zF8"/>
+                                                <action selector="sendSlider:" target="494" id="m22-Ia-rod"/>
                                             </connections>
                                         </slider>
                                     </subviews>
@@ -199,11 +199,11 @@
                             </tabViewItem>
                             <tabViewItem label="Particle" identifier="" id="Ot8-DG-xzv">
                                 <view key="view" ambiguous="YES" id="N56-LN-q25">
-                                    <rect key="frame" x="10" y="33" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="10" y="33" width="243" height="217"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HtC-DL-zpR">
-                                            <rect key="frame" x="101" y="-79" width="96" height="24"/>
+                                        <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="HtC-DL-zpR">
+                                            <rect key="frame" x="101" y="138" width="96" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <segmentedCell key="cell" enabled="NO" alignment="left" style="rounded" trackingMode="selectOne" id="Gcr-JY-awu">
                                                 <font key="font" metaFont="system"/>
@@ -213,11 +213,11 @@
                                                 </segments>
                                             </segmentedCell>
                                             <connections>
-                                                <action selector="sendDirection:" target="494" id="7Mk-xt-Jm6"/>
+                                                <action selector="sendSegmentedControl:" target="494" id="eFv-x9-PRW"/>
                                             </connections>
                                         </segmentedControl>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LVL-Uz-XAj">
-                                            <rect key="frame" x="14" y="-37" width="55" height="17"/>
+                                            <rect key="frame" x="14" y="180" width="55" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Position" id="fhj-fD-46z">
                                                 <font key="font" metaFont="system"/>
@@ -226,7 +226,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7IY-5l-WUE">
-                                            <rect key="frame" x="14" y="-77" width="62" height="17"/>
+                                            <rect key="frame" x="14" y="140" width="62" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Direction" id="ZJO-1i-doa">
                                                 <font key="font" metaFont="system"/>
@@ -234,16 +234,16 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBo-53-wXv">
-                                            <rect key="frame" x="101" y="-42" width="136" height="26"/>
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="jBo-53-wXv">
+                                            <rect key="frame" x="101" y="175" width="136" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="32" tickMarkPosition="above" numberOfTickMarks="32" allowsTickMarkValuesOnly="YES" sliderType="linear" id="40R-Qd-ThM"/>
                                             <connections>
-                                                <action selector="sendPosition:" target="494" id="poT-Tv-mbR"/>
+                                                <action selector="sendSlider:" target="494" id="iyu-Ay-4Kk"/>
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NwK-6l-4i4">
-                                            <rect key="frame" x="14" y="-115" width="42" height="17"/>
+                                            <rect key="frame" x="14" y="102" width="42" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Speed" id="cwG-u3-y00">
                                                 <font key="font" metaFont="system"/>
@@ -251,16 +251,16 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-fb-w76">
-                                            <rect key="frame" x="102" y="-118" width="135" height="21"/>
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-fb-w76">
+                                            <rect key="frame" x="102" y="99" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" enabled="NO" state="on" alignment="left" minValue="1" maxValue="128" doubleValue="32" tickMarkPosition="above" sliderType="linear" id="YLU-WH-Ket"/>
                                             <connections>
-                                                <action selector="sendRate:" target="494" id="reB-e8-BjP"/>
+                                                <action selector="sendSlider:" target="494" id="9op-Xk-90q"/>
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APu-8y-ZKQ">
-                                            <rect key="frame" x="14" y="-153" width="84" height="17"/>
+                                            <rect key="frame" x="14" y="64" width="84" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Lead Corona" id="OMZ-eM-Mkv">
                                                 <font key="font" metaFont="system"/>
@@ -268,16 +268,16 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z08-cu-qH8">
-                                            <rect key="frame" x="102" y="-156" width="135" height="21"/>
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="Z08-cu-qH8">
+                                            <rect key="frame" x="102" y="61" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="5" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="os0-qL-qv5"/>
                                             <connections>
-                                                <action selector="sendLeadCorona:" target="494" id="vP0-E0-aLx"/>
+                                                <action selector="sendSlider:" target="494" id="bsS-jz-AXe"/>
                                             </connections>
                                         </slider>
                                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vid-UB-eEh">
-                                            <rect key="frame" x="14" y="-189" width="77" height="17"/>
+                                            <rect key="frame" x="14" y="28" width="77" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tail Corona" id="vhc-ZR-hDn">
                                                 <font key="font" metaFont="system"/>
@@ -285,12 +285,12 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgv-Uc-FXl">
-                                            <rect key="frame" x="102" y="-192" width="135" height="21"/>
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="hgv-Uc-FXl">
+                                            <rect key="frame" x="102" y="25" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="5" tickMarkPosition="above" sliderType="linear" id="5nv-eF-Vag"/>
                                             <connections>
-                                                <action selector="sendTailCorona:" target="494" id="QK5-HP-ySV"/>
+                                                <action selector="sendSlider:" target="494" id="onv-p6-XG5"/>
                                             </connections>
                                         </slider>
                                     </subviews>
@@ -303,23 +303,23 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="255" tickMarkPosition="below" sliderType="linear" id="MeF-PJ-5c1"/>
                         <connections>
-                            <action selector="sendRed:" target="494" id="E1f-LF-o3I"/>
+                            <action selector="sendSlider:" target="494" id="l3E-t8-SHN"/>
                         </connections>
                     </slider>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SDE-D4-xgn" userLabel="Green" colorLabel="IBBuiltInLabel-Green">
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="SDE-D4-xgn" userLabel="Green" colorLabel="IBBuiltInLabel-Green">
                         <rect key="frame" x="348" y="155" width="96" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="255" tickMarkPosition="above" sliderType="linear" id="Psn-71-MzO"/>
                         <connections>
-                            <action selector="sendGreen:" target="494" id="bho-dv-Zth"/>
+                            <action selector="sendSlider:" target="494" id="SlT-al-yPs"/>
                         </connections>
                     </slider>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sGo-VU-2H2" userLabel="Blue" colorLabel="IBBuiltInLabel-Blue">
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="sGo-VU-2H2" userLabel="Blue" colorLabel="IBBuiltInLabel-Blue">
                         <rect key="frame" x="348" y="112" width="96" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="255" tickMarkPosition="above" sliderType="linear" id="OV0-3h-MDL"/>
                         <connections>
-                            <action selector="sendBlue:" target="494" id="FeO-Jm-ayv"/>
+                            <action selector="sendSlider:" target="494" id="UNI-FX-FBE"/>
                         </connections>
                     </slider>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ee5-hO-Qcd">

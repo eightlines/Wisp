@@ -114,109 +114,70 @@
 //    [ble write:data];
 }
 
--(IBAction)sendRed:(id)sender { // RED
-    //NSLog([sender gelabel]);
-    UInt8 buf[3] = {0x02, 0x00, 0x00};
+-(IBAction)sendSlider:(id)sender { // RED
+    NSLog(@"sendSlider:%i", (int)[sender tag]); // DEBUGGING
+
+    UInt8 bId;
+    int bValue;
     
-    buf[1] = sliderRed.integerValue;
-    buf[2] = (int)sliderRed.integerValue >> 8;
-    
+    switch ([sender tag]) {
+        case 0:
+            bId = 0x01;
+            bValue = (int)sliderRed.integerValue;
+            break;
+        case 1:
+            bId = 0x02;
+            bValue = (int)sliderGreen.integerValue;
+            break;
+        case 2:
+            bId = 0x03;
+            bValue = (int)sliderBlue.integerValue;
+            break;
+        case 3:
+            bId = 0x05;
+            bValue = (int)sliderRate.integerValue;
+            break;
+        case 4:
+            bId = 0x08;
+            bValue = (int)sliderPosition.integerValue;
+            break;
+        case 5:
+            bId = 0x10;
+            bValue = (int)sliderLeadCorona.integerValue;
+            break;
+        case 6:
+            bId = 0x11;
+            bValue = (int)sliderTailCorona.integerValue;
+            break;
+    }
+
+    UInt8 buf[3] = {bId, bValue, bValue >> 8};
     NSData *data = [[NSData alloc] initWithBytes:buf length:3];
     [ble write:data];
 }
 
--(IBAction)sendGreen:(id)sender { // GREEN
-    UInt8 buf[3] = {0x03, 0x00, 0x00};
+-(IBAction)sendSegmentedControl:(id)sender {
+    NSLog(@"sendSegmentedControl:%i", (int)[sender tag]); // DEBUGGING
     
-    buf[1] = sliderGreen.integerValue;
-    buf[2] = (int)sliderGreen.integerValue >> 8;
+    UInt8 bId;
+    int bValue;
     
-    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
-    [ble write:data];
-}
+    switch ([sender tag]) {
+        case 0:
+            bId = 0x06;
+            bValue = (int)lights.selectedSegment;
+            break;
+        case 1:
+            bId = 0x07;
+            bValue = (int)ringType.selectedSegment;
+            break;
+        case 2:
+            bId = 0x09;
+            bValue = (int)direction.selectedSegment;
+            break;
+    }
 
--(IBAction)sendBlue:(id)sender { // BLUE
-    UInt8 buf[3] = {0x04, 0x00, 0x00};
-    
-    buf[1] = sliderBlue.integerValue;
-    buf[2] = (int)sliderBlue.integerValue >> 8;
-    
-    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
-    [ble write:data];
-}
-
--(IBAction)sendRate:(id)sender { // RATE
-    UInt8 buf[3] = {0x05, 0x00, 0x00};
-    
-    buf[1] = sliderRate.integerValue;
-    buf[2] = (int)sliderRate.integerValue >> 8;
-    
-    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
-    [ble write:data];
-}
-
--(IBAction)sendLightState:(id)sender { // LIGHTS ON/OFF
-    NSInteger selIndex = lights.selectedSegment;
-    
-    UInt8 buf[3] = {0x06, 0x00, 0x00};
-    
-    buf[1] = selIndex;
-    buf[2] = (int)selIndex >> 8;
-    
-    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
-    [ble write:data];
-}
-
--(IBAction)sendRingState:(id)sender { // RING FADE/SNAP
-    NSInteger selIndex = ringType.selectedSegment;
-    
-    UInt8 buf[3] = {0x07, 0x00, 0x00};
-    
-    buf[1] = selIndex;
-    buf[2] = (int)selIndex >> 8;
-    
-    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
-    [ble write:data];
-}
-
--(IBAction)sendPosition:(id)sender { // PARTICLE START POSITION
-    UInt8 buf[3] = {0x08, 0x00, 0x00};
-    
-    buf[1] = sliderPosition.integerValue;
-    buf[2] = (int)sliderPosition.integerValue >> 8;
-    
-    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
-    [ble write:data];
-}
-
--(IBAction)sendDirection:(id)sender { // PARTICLE DIRECTION
-    NSInteger selIndex = direction.selectedSegment;
-    
-    UInt8 buf[3] = {0x09, 0x00, 0x00};
-    
-    buf[1] = selIndex;
-    buf[2] = (int)selIndex >> 8;
-    
-    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
-    [ble write:data];
-}
-
--(IBAction)sendLeadCorona:(id)sender { // PARTICLE LEAD CORONA
-    UInt8 buf[3] = {0x10, 0x00, 0x00};
-    
-    buf[1] = sliderLeadCorona.integerValue;
-    buf[2] = (int)sliderLeadCorona.integerValue >> 8;
-    
-    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
-    [ble write:data];
-}
-
--(IBAction)sendTailCorona:(id)sender { // PARTICLE LEAD CORONA
-    UInt8 buf[3] = {0x11, 0x00, 0x00};
-    
-    buf[1] = sliderTailCorona.integerValue;
-    buf[2] = (int)sliderTailCorona.integerValue >> 8;
-    
+    UInt8 buf[3] = {bId, bValue, bValue >> 8};
     NSData *data = [[NSData alloc] initWithBytes:buf length:3];
     [ble write:data];
 }
