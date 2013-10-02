@@ -8,6 +8,7 @@
     IBOutlet NSSlider *sliderGreen;
     IBOutlet NSSlider *sliderBlue;
     IBOutlet NSSlider *sliderRate;
+    IBOutlet NSSlider *sliderRate2;
     IBOutlet NSSlider *sliderPosition;
     IBOutlet NSSlider *sliderLeadCorona;
     IBOutlet NSSlider *sliderTailCorona;

@@ -8,6 +8,7 @@
     ble = [[BLE alloc] init];
     [ble controlSetup:1];
     ble.delegate = self;
+    [tabView selectFirstTabViewItem:nil];
 }
 
 -(void) bleDidConnect {
@@ -20,6 +21,7 @@
     sliderGreen.enabled = true;
     sliderBlue.enabled = true;
     sliderRate.enabled = true;
+    sliderRate2.enabled = true;
     sliderPosition.enabled = true;
     sliderLeadCorona.enabled = true;
     sliderTailCorona.enabled = true;
@@ -31,6 +33,7 @@
     sliderGreen.integerValue = 0;
     sliderBlue.integerValue = 0;
     sliderRate.integerValue = 32;
+    sliderRate2.integerValue = 32;
     sliderPosition.integerValue = 0;
     sliderLeadCorona.integerValue = 0;
     sliderTailCorona.integerValue = 0;
@@ -46,6 +49,7 @@
     sliderGreen.enabled = false;
     sliderBlue.enabled = false;
     sliderRate.enabled = false;
+    sliderRate2.enabled = false;
     sliderPosition.enabled = false;
     sliderLeadCorona.enabled = false;
     sliderTailCorona.enabled = false;
@@ -55,23 +59,12 @@
 }
 
 -(void) bleDidReceiveData:(unsigned char *)data length:(int)length {
-    NSLog(@"Length: %d", length);
+//    NSLog(@"Length: %d", length);
     
     // parse data, all commands are in 3-byte
-    for (int i = 0; i < length; i+=3) {
-        NSLog(@"0x%02X, 0x%02X, 0x%02X", data[i], data[i+1], data[i+2]);
-        
-        if (data[i] == 0x0A) {
-//            if (data[i+1] == 0x01)
-//                lblDigitalIn.stringValue = @"HIGH";
-//            else
-//                lblDigitalIn.stringValue = @"LOW";
-        } else if (data[i] == 0x0B) {
-            UInt16 Value;
-            Value = data[i+2] | data[i+1] << 8;
-//            lblAnalogIn.stringValue = [NSString stringWithFormat:@"%d", Value];
-        }
-    }
+//    for (int i = 0; i < length; i+=3) {
+//        NSLog(@"0x%02X, 0x%02X, 0x%02X", data[i], data[i+1], data[i+2]);
+//    }
 }
 
 -(void) bleDidUpdateRSSI:(NSNumber *) rssi {
@@ -101,64 +94,56 @@
 }
 
 -(IBAction)sendMode:(id)sender {
-    //UInt8 buf[3] = {0x01, 0x00, 0x00};
     NSTabViewItem * item = [tabView selectedTabViewItem];
     NSLog(@"%i", [[item identifier] intValue]);
-    
-//    if (swDigitalOut.selectedSegment == 0)
-//        buf[1] = 0x01;
-//    else
-//        buf[1] = 0x00;
-    
-//    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
-//    [ble write:data];
 }
 
 -(IBAction)sendSlider:(id)sender { // RED
-    NSLog(@"sendSlider:%i", (int)[sender tag]); // DEBUGGING
-
     UInt8 bId;
     int bValue;
     
     switch ([sender tag]) {
-        case 0:
-            bId = 0x01;
+        case 0: // R
+            bId = 0x02;
             bValue = (int)sliderRed.integerValue;
             break;
-        case 1:
-            bId = 0x02;
+        case 1: // G
+            bId = 0x03;
             bValue = (int)sliderGreen.integerValue;
             break;
-        case 2:
-            bId = 0x03;
+        case 2: // B
+            bId = 0x04;
             bValue = (int)sliderBlue.integerValue;
             break;
-        case 3:
+        case 3: // RATE
             bId = 0x05;
             bValue = (int)sliderRate.integerValue;
             break;
-        case 4:
+        case 4: // POSITION
             bId = 0x08;
             bValue = (int)sliderPosition.integerValue;
             break;
-        case 5:
+        case 5: // LEAD CORONA
             bId = 0x10;
             bValue = (int)sliderLeadCorona.integerValue;
             break;
-        case 6:
+        case 6: // TAIL CORONA
             bId = 0x11;
             bValue = (int)sliderTailCorona.integerValue;
             break;
+        case 7: // RATE2
+            bId = 0x05;
+            bValue = (int)sliderRate2.integerValue;
+            break;
     }
 
+    NSLog(@"sendSlider:%i %i", (int)[sender tag], bValue); // DEBUGGING
     UInt8 buf[3] = {bId, bValue, bValue >> 8};
     NSData *data = [[NSData alloc] initWithBytes:buf length:3];
     [ble write:data];
 }
 
 -(IBAction)sendSegmentedControl:(id)sender {
-    NSLog(@"sendSegmentedControl:%i", (int)[sender tag]); // DEBUGGING
-    
     UInt8 bId;
     int bValue;
     
@@ -177,6 +162,7 @@
             break;
     }
 
+    NSLog(@"sendSegmentedControl:%i %i", (int)[sender tag], bValue); // DEBUGGING
     UInt8 buf[3] = {bId, bValue, bValue >> 8};
     NSData *data = [[NSData alloc] initWithBytes:buf length:3];
     [ble write:data];

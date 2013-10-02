@@ -13,6 +13,8 @@
 		29F401B4163B510F007BEE39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F401B3163B510F007BEE39 /* AppDelegate.m */; };
 		29F401B7163B510F007BEE39 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F401B5163B510F007BEE39 /* MainMenu.xib */; };
 		29F401C2163B514A007BEE39 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F401C1163B514A007BEE39 /* IOBluetooth.framework */; };
+		8426E8D317FBBD710037DED5 /* WISP_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426E8D217FBBD710037DED5 /* WISP_logo.png */; };
+		8426E8DB17FBBE710037DED5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8426E8DA17FBBE710037DED5 /* Images.xcassets */; };
 		C2B0191116523B4B00940887 /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B0190F16523B4B00940887 /* BLE.m */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,13 @@
 		29F401B3163B510F007BEE39 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		29F401B6163B510F007BEE39 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		29F401C1163B514A007BEE39 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+		8426E8D217FBBD710037DED5 /* WISP_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WISP_logo.png; sourceTree = "<group>"; };
+		8426E8D517FBBE680037DED5 /* icon_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_128x128.png; sourceTree = "<group>"; };
+		8426E8D617FBBE680037DED5 /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16.png; sourceTree = "<group>"; };
+		8426E8D717FBBE680037DED5 /* icon_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_256x256.png; sourceTree = "<group>"; };
+		8426E8D817FBBE680037DED5 /* icon_32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_32x32.png; sourceTree = "<group>"; };
+		8426E8D917FBBE680037DED5 /* icon_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512x512.png; sourceTree = "<group>"; };
+		8426E8DA17FBBE710037DED5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C2B0190E16523B4B00940887 /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLE.h; sourceTree = "<group>"; };
 		C2B0190F16523B4B00940887 /* BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLE.m; sourceTree = "<group>"; };
 		C2B0191016523B4B00940887 /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
@@ -51,6 +60,8 @@
 		29F40191163B510F007BEE39 = {
 			isa = PBXGroup;
 			children = (
+				8426E8D417FBBE680037DED5 /* icons */,
+				8426E8D217FBBD710037DED5 /* WISP_logo.png */,
 				29F401A6163B510F007BEE39 /* Wisp */,
 				29F4019F163B510F007BEE39 /* Frameworks */,
 				29F4019D163B510F007BEE39 /* Products */,
@@ -92,6 +103,7 @@
 				29F401B2163B510F007BEE39 /* AppDelegate.h */,
 				29F401B3163B510F007BEE39 /* AppDelegate.m */,
 				29F401B5163B510F007BEE39 /* MainMenu.xib */,
+				8426E8DA17FBBE710037DED5 /* Images.xcassets */,
 				29F401A7163B510F007BEE39 /* Supporting Files */,
 			);
 			path = Wisp;
@@ -106,6 +118,18 @@
 				29F401AE163B510F007BEE39 /* Wisp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8426E8D417FBBE680037DED5 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				8426E8D517FBBE680037DED5 /* icon_128x128.png */,
+				8426E8D617FBBE680037DED5 /* icon_16x16.png */,
+				8426E8D717FBBE680037DED5 /* icon_256x256.png */,
+				8426E8D817FBBE680037DED5 /* icon_32x32.png */,
+				8426E8D917FBBE680037DED5 /* icon_512x512.png */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 		C2B0190D16523B4B00940887 /* BLE_Framework */ = {
@@ -171,6 +195,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				29F401AB163B510F007BEE39 /* InfoPlist.strings in Resources */,
+				8426E8DB17FBBE710037DED5 /* Images.xcassets in Resources */,
+				8426E8D317FBBD710037DED5 /* WISP_logo.png in Resources */,
 				29F401B7163B510F007BEE39 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +292,7 @@
 		29F401BB163B510F007BEE39 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wisp/Wisp-Prefix.pch";
@@ -283,6 +310,7 @@
 		29F401BC163B510F007BEE39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wisp/Wisp-Prefix.pch";
