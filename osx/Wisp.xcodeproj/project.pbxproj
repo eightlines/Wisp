@@ -13,7 +13,6 @@
 		29F401B4163B510F007BEE39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F401B3163B510F007BEE39 /* AppDelegate.m */; };
 		29F401B7163B510F007BEE39 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29F401B5163B510F007BEE39 /* MainMenu.xib */; };
 		29F401C2163B514A007BEE39 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F401C1163B514A007BEE39 /* IOBluetooth.framework */; };
-		8426E8D317FBBD710037DED5 /* WISP_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8426E8D217FBBD710037DED5 /* WISP_logo.png */; };
 		8426E8DB17FBBE710037DED5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8426E8DA17FBBE710037DED5 /* Images.xcassets */; };
 		C2B0191116523B4B00940887 /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B0190F16523B4B00940887 /* BLE.m */; };
 /* End PBXBuildFile section */
@@ -32,7 +31,6 @@
 		29F401B3163B510F007BEE39 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		29F401B6163B510F007BEE39 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		29F401C1163B514A007BEE39 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
-		8426E8D217FBBD710037DED5 /* WISP_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WISP_logo.png; sourceTree = "<group>"; };
 		8426E8D517FBBE680037DED5 /* icon_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_128x128.png; sourceTree = "<group>"; };
 		8426E8D617FBBE680037DED5 /* icon_16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_16x16.png; sourceTree = "<group>"; };
 		8426E8D717FBBE680037DED5 /* icon_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_256x256.png; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				8426E8D417FBBE680037DED5 /* icons */,
-				8426E8D217FBBD710037DED5 /* WISP_logo.png */,
 				29F401A6163B510F007BEE39 /* Wisp */,
 				29F4019F163B510F007BEE39 /* Frameworks */,
 				29F4019D163B510F007BEE39 /* Products */,
@@ -196,7 +193,6 @@
 			files = (
 				29F401AB163B510F007BEE39 /* InfoPlist.strings in Resources */,
 				8426E8DB17FBBE710037DED5 /* Images.xcassets in Resources */,
-				8426E8D317FBBD710037DED5 /* WISP_logo.png in Resources */,
 				29F401B7163B510F007BEE39 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
