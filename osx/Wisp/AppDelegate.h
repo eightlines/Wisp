@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "BLE.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate, BLEDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTabViewDelegate, BLEDelegate>
 {
     IBOutlet NSTextField *lblRSSI;
     IBOutlet NSSlider *sliderRed;

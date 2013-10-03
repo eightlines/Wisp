@@ -93,9 +93,13 @@
     }
 }
 
--(IBAction)sendMode:(id)sender {
-    NSTabViewItem * item = [tabView selectedTabViewItem];
-    NSLog(@"%i", [[item identifier] intValue]);
+- (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem {
+    int bValue = ([[tabViewItem label] isEqualToString:@"Blink"]) ? 0 : ([[tabViewItem label] isEqualToString:@"Particle"]) ? 1 : -1;
+    if (bValue == -1) return;
+    NSLog(@"sendMode:%i", bValue); // DEBUGGING
+    UInt8 buf[3] = {0x01, bValue, bValue >> 8};
+    NSData *data = [[NSData alloc] initWithBytes:buf length:3];
+    [ble write:data];
 }
 
 -(IBAction)sendSlider:(id)sender { // RED
